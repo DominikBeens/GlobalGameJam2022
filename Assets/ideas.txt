@@ -1,0 +1,11 @@
+-characters switchen automatisch om de x seconden
+-elk character heeft twee unieke abilities (rechter/linker muisknop)
+-wereld is zwart/wit (twee kleurig)
+-de wereld switched van achtergrond kleur wanneer je van character switched (puur voor visual fluff)
+-endless runner, character rent continue naar rechts
+
+-obstakel 1: heaven/hell gate, alleen de juiste character kan hem passeren
+-obstakel 2:
+
+-character ability 1: projectile die gates kan veranderen (heaven naar hell, en andersom)
+-character ability 2: 
