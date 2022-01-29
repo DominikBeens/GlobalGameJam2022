@@ -611,8 +611,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacles:
-  - {fileID: 6009622747701592507, guid: bf94cc6a5e2a15143aaee83fb388670a, type: 3}
-  startSpawnAfterDistance: 100
+  - {fileID: 6009622747701592507, guid: 54ca1b5fa8c794b4381ec5d316045959, type: 3}
+  startSpawnAfterDistance: 75
   interval: 50
   xSpawnStart: 25
   xSpawnOffset: 5

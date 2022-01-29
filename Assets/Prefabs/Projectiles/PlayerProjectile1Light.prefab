@@ -4893,7 +4893,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visual: {fileID: 2396722842948181729}
+  visualType: 0
   force: 6000
+  lifetime: 2.5
 --- !u!58 &405360090244194810
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4925,7 +4927,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 4
+  m_GravityScale: 3
   m_Material: {fileID: 6200000, guid: 6d631ddc9f8561d458b046b3e7647382, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
