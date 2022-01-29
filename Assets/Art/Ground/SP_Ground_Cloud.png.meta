@@ -33,18 +33,18 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 0
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -196,7 +196,7 @@ TextureImporter:
         width: 994
         height: 939
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -217,7 +217,7 @@ TextureImporter:
         width: 943
         height: 985
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -225,6 +225,27 @@ TextureImporter:
       bones: []
       spriteID: ddb9eac8fabdbb646af8240418b3c452
       internalID: 1177965529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SP_Ground_Cloud_6
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 3439
+        width: 864
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7731a9ea5e36c6841a94b5c20a3fb459
+      internalID: -2031244309
       vertices: []
       indices: 
       edges: []
@@ -244,6 +265,7 @@ TextureImporter:
       SP_Ground_Cloud_1: 1393511699
       SP_Ground_Cloud_4: 437135980
       SP_Ground_Cloud_0: -1243034580
+      SP_Ground_Cloud_6: -2031244309
       SP_Ground_Cloud_2: 1063605355
       SP_Ground_Cloud_3: 550490599
   spritePackingTag: 
