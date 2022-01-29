@@ -160,6 +160,7 @@ MonoBehaviour:
   baseSpeedIncreaseInterval: 25
   groundSpawner: {fileID: 459141897}
   obstacleSpawner: {fileID: 1223142432}
+  gameBackgroundSpawner: {fileID: 746348358}
 --- !u!4 &78244166
 Transform:
   m_ObjectHideFlags: 0
@@ -357,6 +358,7 @@ GameObject:
   m_Component:
   - component: {fileID: 525396476}
   - component: {fileID: 525396477}
+  - component: {fileID: 525396478}
   m_Layer: 0
   m_Name: SpriteDark
   m_TagString: Untagged
@@ -432,6 +434,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &525396478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525396475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a5c4e96201c2a34b969d9e4ea521a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorChangeDuration: 0.2
+  colorables:
+  - VisualType: 0
+    Color: {r: 0.7921569, g: 0.7921569, b: 0.7921569, a: 0}
+  - VisualType: 1
+    Color: {r: 0.7921569, g: 0.7921569, b: 0.7921569, a: 1}
 --- !u!1 &720969484
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,7 +494,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 746348357}
-  - component: {fileID: 746348356}
+  - component: {fileID: 746348358}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -482,24 +502,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &746348356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 746348355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca7a44cadfa24e540a55558b189a5807, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeDuration: 0.2
-  backgrounds:
-  - VisualType: 0
-    SpriteRenderer: {fileID: 2012640751}
-  - VisualType: 1
-    SpriteRenderer: {fileID: 525396477}
 --- !u!4 &746348357
 Transform:
   m_ObjectHideFlags: 0
@@ -517,6 +519,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &746348358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746348355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d4be49a85044804d86226933cd08870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundObjects:
+  - Prefab: {fileID: 3436453083688233842, guid: c35b2b3795fb61a40b3d31e3d214288c,
+      type: 3}
+    MinScale: 0.05
+    MaxScale: 0.1
+    SpawnAmount: 5
+    ClearRange: 5
+  - Prefab: {fileID: 3436453083688233842, guid: 6e36a18e034795444860aa6943713186,
+      type: 3}
+    MinScale: 0.05
+    MaxScale: 0.1
+    SpawnAmount: 4
+    ClearRange: 7
+  viewportEdgeOffset: 0.15
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,6 +654,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2012640752}
   - component: {fileID: 2012640751}
+  - component: {fileID: 2012640753}
   m_Layer: 0
   m_Name: SpriteLight
   m_TagString: Untagged
@@ -701,3 +730,21 @@ Transform:
   m_Father: {fileID: 746348357}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2012640753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012640750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a5c4e96201c2a34b969d9e4ea521a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorChangeDuration: 0.2
+  colorables:
+  - VisualType: 0
+    Color: {r: 0.101960786, g: 0.101960786, b: 0.101960786, a: 1}
+  - VisualType: 1
+    Color: {r: 0.101960786, g: 0.101960786, b: 0.101960786, a: 0}

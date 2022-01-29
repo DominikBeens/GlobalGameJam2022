@@ -10,6 +10,7 @@ public class GameStateMachine : MonoStateMachineSingleton<GameStateMachine> {
     [Space]
     [SerializeField] private GroundSpawner groundSpawner;
     [SerializeField] private ObstacleSpawner obstacleSpawner;
+    [SerializeField] private GameBackgroundSpawner gameBackgroundSpawner;
 
     public float WorldMoveSpeed { get; private set; }
 
@@ -22,6 +23,7 @@ public class GameStateMachine : MonoStateMachineSingleton<GameStateMachine> {
     protected override void Awake() {
         base.Awake();
         PlayerManager.Instance.SpawnPlayer();
+        gameBackgroundSpawner.Spawn();
     }
 
     public override void Enter(params object[] data) {
@@ -46,6 +48,7 @@ public class GameStateMachine : MonoStateMachineSingleton<GameStateMachine> {
         base.Tick();
         ProcessSpeed();
         ProcessDistance();
+        ProcessGameBackgroundPosition();
     }
 
     private void ProcessSpeed() {
@@ -63,5 +66,14 @@ public class GameStateMachine : MonoStateMachineSingleton<GameStateMachine> {
         distanceThisFrame = WorldMoveSpeed * Time.deltaTime;
         distance += distanceThisFrame;
         GameEvents.OnPlayerDistanceTraveled.Invoke(distance, distanceThisFrame);
+    }
+
+    // Background spawns in viewport but level can go up or down randomly resulting in the player potentially being able to 
+    // go 'out of bounds' on the Y axis meaning he will go abve or below the spawn bounds of the background.
+    // EZ FIX: just move the background Y with the player 🤪
+    private void ProcessGameBackgroundPosition() {
+        Vector3 target = gameBackgroundSpawner.transform.position;
+        target.y = PlayerManager.Instance.Player.transform.position.y;
+        gameBackgroundSpawner.transform.position = Vector3.Lerp(gameBackgroundSpawner.transform.position, target, Time.deltaTime);
     }
 }
