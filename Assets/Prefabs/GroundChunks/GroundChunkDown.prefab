@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7559793291914565915}
   - component: {fileID: 3571867585446601935}
   - component: {fileID: 6358863678686630438}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PF_Ground_fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,7 +261,7 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.77342397, y: 4.931325}
+    - - {x: -0.74317783, y: 4.9417734}
       - {x: 1.827033, y: 5.8296337}
       - {x: 3.6750512, y: 6.452061}
       - {x: 4.197773, y: 1.6472156}
@@ -277,8 +277,9 @@ PolygonCollider2D:
       - {x: -9.995799, y: -1.3475873}
       - {x: -10.172488, y: 0.593274}
       - {x: -10.28318, y: 3.902554}
-      - {x: -6.4744706, y: 3.618059}
       - {x: -6.4475856, y: 3.6159153}
+      - {x: -0.78730226, y: 4.9317303}
+      - {x: -0.74317783, y: 4.9417734}
 --- !u!1 &114965205299884025
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,7 +290,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4567695812602370588}
   - component: {fileID: 5940108977092017719}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SP_probs_light_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -373,7 +374,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4250754147115163154}
   - component: {fileID: 6683532837240832148}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SP_probs_light_1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -457,7 +458,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3295028011073405088}
   - component: {fileID: 990420762350923152}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SP_probs_light_2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -540,8 +541,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1080246610964538116}
-  - component: {fileID: 655632188055868734}
-  - component: {fileID: 5649809620772740467}
   m_Layer: 6
   m_Name: GroundChunkDown
   m_TagString: Untagged
@@ -569,45 +568,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &655632188055868734
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1080246610964538119}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &5649809620772740467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1080246610964538119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a5c4e96201c2a34b969d9e4ea521a2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colorChangeDuration: 0.2
-  colorables:
-  - VisualType: 0
-    Color: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 1}
-  - VisualType: 1
-    Color: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 1}
 --- !u!1 &1289499673927732556
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,7 +690,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5187777952875016991}
   - component: {fileID: 8601606223398947923}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SP_probs_light_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -813,7 +773,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 101724714603892912}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: probs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -964,7 +924,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6552855085147318263}
   - component: {fileID: 3230119248157420154}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SP_probs_light_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1048,7 +1008,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2363470545356317854}
   - component: {fileID: 2195693283683337265}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SP_probs_light_2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1244,7 +1204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6978493972812886826}
   - component: {fileID: 4320124177135132451}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SP_probs_light_1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -52,7 +52,7 @@ public class Player : MonoBehaviour {
 
     private void ProcessAiming() {
         Vector2 mousePosition = Input.mousePosition;
-        Vector3 target = PlayerManager.Instance.PlayerCamera.Camera.WorldToScreenPoint(shooter.position);
+        Vector3 target = PlayerCameraManager.Instance.Camera.WorldToScreenPoint(shooter.position);
         Vector2 direction = new Vector2(mousePosition.x - target.x, mousePosition.y - target.y);
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         shooter.transform.localRotation = Quaternion.Euler(0, 0, angle - 90);
@@ -60,7 +60,7 @@ public class Player : MonoBehaviour {
 
     private void ProcessOrientation() {
         Vector2 mousePosition = Input.mousePosition;
-        Vector3 position = PlayerManager.Instance.PlayerCamera.Camera.WorldToScreenPoint(transform.position);
+        Vector3 position = PlayerCameraManager.Instance.Camera.WorldToScreenPoint(transform.position);
 
         if (mousePosition.x < position.x && visualContainer.localEulerAngles.y != VISUAL_Y_ROT_LEFT) {
             visualContainer.DOKill();

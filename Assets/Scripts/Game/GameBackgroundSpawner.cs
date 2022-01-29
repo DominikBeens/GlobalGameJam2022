@@ -43,7 +43,7 @@ public class GameBackgroundSpawner : MonoBehaviour {
     private Vector3 GetRandomPosition(BackgroundObject obj) {
         float viewportX = Random.Range(-viewportEdgeOffset, 1 + viewportEdgeOffset);
         float viewportY = Random.Range(-viewportEdgeOffset, 1 + viewportEdgeOffset);
-        Vector3 worldPosition = PlayerManager.Instance.PlayerCamera.Camera.ViewportToWorldPoint(new Vector3(viewportX, viewportY, 20f));
+        Vector3 worldPosition = PlayerCameraManager.Instance.Camera.ViewportToWorldPoint(new Vector3(viewportX, viewportY, 20f));
         worldPosition.z = 0f;
         return worldPosition;
     }
