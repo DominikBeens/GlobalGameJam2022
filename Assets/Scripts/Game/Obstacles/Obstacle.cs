@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -20,6 +19,9 @@ public class Obstacle : MonoBehaviour {
     public void Intialize() {
         VisualType random = Random.value < 0.5f ? VisualType.Light : VisualType.Dark;
         SetVisual(random);
+
+        ActiveVisual.GameObject.transform.localScale = Vector3.zero;
+        ActiveVisual.GameObject.transform.DOScale(1f, 0.25f).SetEase(Ease.OutBack);
     }
 
     public void Hit(VisualType visualType) {
@@ -40,6 +42,7 @@ public class Obstacle : MonoBehaviour {
     }
 
     private void Animate() {
+        ActiveVisual.GameObject.transform.DOKill(true);
         ActiveVisual.GameObject.transform.DOPunchScale(new Vector3(0.15f, 0.25f, 0.15f), 0.25f);
     }
 }

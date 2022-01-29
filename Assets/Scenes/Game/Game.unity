@@ -642,7 +642,7 @@ MonoBehaviour:
   - {fileID: 6009622747701592507, guid: 54ca1b5fa8c794b4381ec5d316045959, type: 3}
   startSpawnAfterDistance: 75
   interval: 50
-  xSpawnStart: 25
+  xSpawnStart: 35
   xSpawnOffset: 5
 --- !u!1 &2012640750
 GameObject:

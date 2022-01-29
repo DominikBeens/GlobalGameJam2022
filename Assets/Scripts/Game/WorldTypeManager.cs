@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WorldTypeManager : Manager<WorldTypeManager> {
@@ -8,6 +6,7 @@ public class WorldTypeManager : Manager<WorldTypeManager> {
 
     public VisualType VisualType { get; private set; }
     public float Timer { get; private set; }
+    public float TimerNormalized { get; private set; }
 
     private bool state;
 
@@ -29,6 +28,8 @@ public class WorldTypeManager : Manager<WorldTypeManager> {
         if (!state) { return; }
 
         Timer += Time.deltaTime;
+        TimerNormalized = Timer / interval;
+
         if (Timer < interval) { return; }
 
         Timer = 0f;

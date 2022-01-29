@@ -34,6 +34,7 @@ public class GameStateMachine : MonoStateMachineSingleton<GameStateMachine> {
 
         WorldTypeManager.Instance.StartClock();
         UIManager.Instance.GetPanel<ScorePanel>().Show();
+        UIManager.Instance.GetPanel<VisualSwitchPanel>().Show();
 
         GameEvents.OnGameStarted.Invoke();
     }
@@ -42,6 +43,7 @@ public class GameStateMachine : MonoStateMachineSingleton<GameStateMachine> {
         base.Exit();
         WorldTypeManager.Instance.StopClock();
         UIManager.Instance.GetPanel<ScorePanel>().Hide();
+        UIManager.Instance.GetPanel<VisualSwitchPanel>().Hide();
     }
 
     public override void Tick() {

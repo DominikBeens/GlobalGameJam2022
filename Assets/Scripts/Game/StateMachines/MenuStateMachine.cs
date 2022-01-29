@@ -11,7 +11,7 @@ public class MenuStateMachine : MonoStateMachineSingleton<MenuStateMachine> {
         base.Enter(data);
         playButton.onClick.AddListener(HandlePlayButtonClicked);
         quitButton.onClick.AddListener(HandleQuitButtonClicked);
-        // HandlePlayButtonClicked();
+        HandlePlayButtonClicked();
     }
 
     public override void Exit() {
