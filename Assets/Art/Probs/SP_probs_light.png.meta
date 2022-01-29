@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c48555083f765fb4fb4eeb9c0fd9cbf7
+guid: 6dec148f597e08145a03be2b63db2fb9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -44,10 +44,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 500
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -104,190 +104,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SP_Ground_Cloud_0
-      rect:
-        serializedVersion: 2
-        x: 91
-        y: 0
-        width: 2884
-        height: 1409
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 449, y: 0, z: 426, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: de4d24390a4c1ef4da742297874321e1
-      internalID: -178500704
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SP_Ground_Cloud_1
-      rect:
-        serializedVersion: 2
-        x: 1119
-        y: 2561
-        width: 814
-        height: 723
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4d45ce239e81f1c459707b64e6482d48
-      internalID: -1579646782
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SP_Ground_Cloud_2
-      rect:
-        serializedVersion: 2
-        x: 2065
-        y: 2452
-        width: 886
-        height: 964
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4bf734ff17f398549ab4cf9c95c4e8a0
-      internalID: 1410359617
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SP_Ground_Cloud_3
-      rect:
-        serializedVersion: 2
-        x: 1082
-        y: 3445
-        width: 888
-        height: 1013
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4f9d3f37ba9339444980c158882ba49d
-      internalID: 521713571
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SP_Ground_Cloud_4
+      name: SP_probs_light_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 3478
-        width: 987
-        height: 980
+        y: 0
+        width: 2291
+        height: 3024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f078f7a255910045abaed16ceb0da59
-      internalID: 589162711
+      spriteID: 4bac195e047021b4f9ec289202345efa
+      internalID: 633895343
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SP_Ground_Cloud_5
+      name: SP_probs_light_1
       rect:
         serializedVersion: 2
-        x: 2065
-        y: 3471
-        width: 959
-        height: 987
+        x: 2347
+        y: 622
+        width: 1756
+        height: 1907
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca90c5fddc9030f49b3ccebc509c6806
-      internalID: -1733153871
+      spriteID: 2e4c909a14965994bbfe036bc0da18d0
+      internalID: -1196634632
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SP_Ground_Cloud_6
+      name: SP_probs_light_2
       rect:
         serializedVersion: 2
-        x: 122
-        y: 1421
-        width: 900
-        height: 803
+        x: 4182
+        y: 106
+        width: 1136
+        height: 953
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5cd6091dfa348941bb5db0a96e8fcb0
-      internalID: -1511801134
+      spriteID: 213ecd5f1654d374584f10eaa03091ea
+      internalID: -351060344
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SP_Ground_Cloud_7
+      name: SP_probs_light_3
       rect:
         serializedVersion: 2
-        x: 1111
-        y: 1505
-        width: 871
-        height: 839
+        x: 4754
+        y: 1226
+        width: 3046
+        height: 1798
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd98198efa71ddf4a98cacceba354b6e
-      internalID: 339060597
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SP_Ground_Cloud_8
-      rect:
-        serializedVersion: 2
-        x: 2066
-        y: 1477
-        width: 916
-        height: 762
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 81e3d5b1aaba8a042a9fedf251cefc5c
-      internalID: 548526397
+      spriteID: 7ce551183f04a1f4ba870b675fd7a2a1
+      internalID: 1582248690
       vertices: []
       indices: 
       edges: []
@@ -303,15 +198,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SP_Ground_Cloud_5: -1733153871
-      SP_Ground_Cloud_1: -1579646782
-      SP_Ground_Cloud_4: 589162711
-      SP_Ground_Cloud_0: -178500704
-      SP_Ground_Cloud_6: -1511801134
-      SP_Ground_Cloud_7: 339060597
-      SP_Ground_Cloud_2: 1410359617
-      SP_Ground_Cloud_8: 548526397
-      SP_Ground_Cloud_3: 521713571
+      SP_probs_light_1: -1196634632
+      SP_probs_light_2: -351060344
+      SP_probs_light_3: 1582248690
+      SP_probs_light_0: 633895343
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
