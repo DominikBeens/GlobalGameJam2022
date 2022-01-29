@@ -1,0 +1,1 @@
+public enum VisualType { Light, Dark }

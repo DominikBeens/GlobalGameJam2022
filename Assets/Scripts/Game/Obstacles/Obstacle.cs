@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class World : MonoBehaviour {
+public class Obstacle : MonoBehaviour {
 
+    public void Intialize() {
+
+    }
 }
