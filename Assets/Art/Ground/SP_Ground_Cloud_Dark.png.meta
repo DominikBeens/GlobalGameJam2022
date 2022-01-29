@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c48555083f765fb4fb4eeb9c0fd9cbf7
+guid: f339ee6f89b0ad0429a191da240877dd
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,127 +104,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SP_Ground_Cloud_0
+      name: SP_Ground_Cloud_Dark_0
       rect:
         serializedVersion: 2
-        x: 132
+        x: 49
         y: 0
-        width: 2844
-        height: 1392
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 569, y: 0, z: 466, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8308e55b37160c448af09ffd77cb90d8
-      internalID: -1243034580
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SP_Ground_Cloud_1
-      rect:
-        serializedVersion: 2
-        x: 2029
-        y: 2518
-        width: 949
-        height: 889
-      alignment: 9
-      pivot: {x: -0.3782213, y: 0.43269217}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3fcf6e3ca6ddf534c98fa13525577600
-      internalID: 1393511699
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SP_Ground_Cloud_2
-      rect:
-        serializedVersion: 2
-        x: 1059
-        y: 1503
-        width: 934
-        height: 853
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 35, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9254bc885b178bb49965a863e04235c1
-      internalID: 1063605355
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SP_Ground_Cloud_3
-      rect:
-        serializedVersion: 2
-        x: 1123
-        y: 2510
-        width: 786
-        height: 778
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 57cd48ef94a40874f9c8482acf2bf091
-      internalID: 550490599
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SP_Ground_Cloud_4
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 3505
-        width: 994
-        height: 939
+        width: 2975
+        height: 1418
       alignment: 0
       pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 499, y: 0, z: 506, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d2b181ed7663cc4b8bea2ac38a18499
-      internalID: 437135980
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SP_Ground_Cloud_5
-      rect:
-        serializedVersion: 2
-        x: 2054
-        y: 3457
-        width: 943
-        height: 985
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ddb9eac8fabdbb646af8240418b3c452
-      internalID: 1177965529
+      spriteID: 6d01837a7db63d642a3e5eaf8762f935
+      internalID: 1708812947
       vertices: []
       indices: 
       edges: []
@@ -232,7 +127,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 733d2b040ba2bf34c896bffdba19c192
+    spriteID: c4500ba20b9ea9b4b8e22cf1847798e8
     internalID: 0
     vertices: []
     indices: 
@@ -240,12 +135,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SP_Ground_Cloud_5: 1177965529
-      SP_Ground_Cloud_1: 1393511699
-      SP_Ground_Cloud_4: 437135980
-      SP_Ground_Cloud_0: -1243034580
-      SP_Ground_Cloud_2: 1063605355
-      SP_Ground_Cloud_3: 550490599
+      SP_Ground_Cloud_Dark_0: 1708812947
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
