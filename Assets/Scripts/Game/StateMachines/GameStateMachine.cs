@@ -21,7 +21,6 @@ public class GameStateMachine : MonoStateMachineSingleton<GameStateMachine> {
 
     protected override void Awake() {
         base.Awake();
-        GameStateMachine.Instance.EnterState<GameStateMachine>();
         PlayerManager.Instance.SpawnPlayer();
     }
 
@@ -32,11 +31,15 @@ public class GameStateMachine : MonoStateMachineSingleton<GameStateMachine> {
         worldSpeedIncreaseInterval = baseSpeedIncreaseInterval;
 
         WorldTypeManager.Instance.StartClock();
+        UIManager.Instance.GetPanel<ScorePanel>().Show();
+
+        GameEvents.OnGameStarted.Invoke();
     }
 
     public override void Exit() {
         base.Exit();
         WorldTypeManager.Instance.StopClock();
+        UIManager.Instance.GetPanel<ScorePanel>().Hide();
     }
 
     public override void Tick() {
