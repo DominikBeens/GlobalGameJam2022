@@ -59,7 +59,7 @@ public class GroundSpawner : MonoBehaviour {
             GameObject obj = groundChunkHistory[i].Item2;
             obj.transform.localPosition += Vector3.left * distanceThisFrame;
 
-            if (obj.transform.localPosition.x < -25f) {
+            if (obj.transform.localPosition.x < -(groundChunkWidth * 3f)) {
                 groundChunkHistory.RemoveAt(i);
                 Destroy(obj);
             }

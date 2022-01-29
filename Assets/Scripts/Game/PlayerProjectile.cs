@@ -12,7 +12,7 @@ public class PlayerProjectile : MonoBehaviour {
     public void Initialize(Vector3 direction) {
         body = GetComponent<Rigidbody2D>();
 
-        Vector2 scaledForce = direction * GameStateMachine.Instance.WorldMoveSpeed * force * Time.deltaTime;
+        Vector2 scaledForce = direction * force * Time.deltaTime;
         body.AddForce(scaledForce, ForceMode2D.Impulse);
     }
 }

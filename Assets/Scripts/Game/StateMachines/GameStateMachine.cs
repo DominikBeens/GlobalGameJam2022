@@ -22,6 +22,7 @@ public class GameStateMachine : MonoStateMachineSingleton<GameStateMachine> {
     protected override void Awake() {
         base.Awake();
         GameStateMachine.Instance.EnterState<GameStateMachine>();
+        PlayerManager.Instance.SpawnPlayer();
     }
 
     public override void Enter(params object[] data) {

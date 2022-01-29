@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1080246610964538114}
   - component: {fileID: 1080246610964538117}
   - component: {fileID: 6618003557071582256}
+  - component: {fileID: 6423950205498713038}
   m_Layer: 6
   m_Name: GroundChunkFlat
   m_TagString: Untagged
@@ -134,3 +135,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6423950205498713038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080246610964538119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a5c4e96201c2a34b969d9e4ea521a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorChangeDuration: 0.2
+  colorables:
+  - VisualType: 0
+    Color: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 1}
+  - VisualType: 1
+    Color: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 1}

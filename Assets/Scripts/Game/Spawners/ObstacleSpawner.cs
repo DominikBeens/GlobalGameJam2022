@@ -45,6 +45,8 @@ public class ObstacleSpawner : MonoBehaviour {
 
     private void SpawnObstacle() {
         Vector3 position = GetSpawnPosition(out Transform groundChunk);
+        if (position == Vector3.zero) { return; }
+
         Obstacle obstacle = Instantiate(GetNewObstacle(), position, Quaternion.identity);
         obstacle.transform.SetParent(groundChunk);
         obstacle.Intialize();
