@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameStateMachine : MonoStateMachineSingleton<GameStateMachine> {
@@ -13,7 +11,8 @@ public class GameStateMachine : MonoStateMachineSingleton<GameStateMachine> {
     [SerializeField] private GroundSpawner groundSpawner;
     [SerializeField] private ObstacleSpawner obstacleSpawner;
 
-    private float worldMoveSpeed;
+    public float WorldMoveSpeed { get; private set; }
+
     private float worldSpeedIncreaseInterval;
 
     private float distance;
@@ -28,8 +27,15 @@ public class GameStateMachine : MonoStateMachineSingleton<GameStateMachine> {
     public override void Enter(params object[] data) {
         base.Enter(data);
 
-        worldMoveSpeed = baseWorldMoveSpeed;
+        WorldMoveSpeed = baseWorldMoveSpeed;
         worldSpeedIncreaseInterval = baseSpeedIncreaseInterval;
+
+        WorldTypeManager.Instance.StartClock();
+    }
+
+    public override void Exit() {
+        base.Exit();
+        WorldTypeManager.Instance.StopClock();
     }
 
     public override void Tick() {
@@ -39,18 +45,18 @@ public class GameStateMachine : MonoStateMachineSingleton<GameStateMachine> {
     }
 
     private void ProcessSpeed() {
-        if (worldMoveSpeed >= maxWorldSpeed) { return; }
+        if (WorldMoveSpeed >= maxWorldSpeed) { return; }
 
         distanceForSpeedIncrease += distanceThisFrame;
         if (distanceForSpeedIncrease < worldSpeedIncreaseInterval) { return; }
 
         distanceForSpeedIncrease = 0f;
-        worldMoveSpeed += speedIncrease;
+        WorldMoveSpeed += speedIncrease;
         worldSpeedIncreaseInterval += (baseSpeedIncreaseInterval * 2f);
     }
 
     private void ProcessDistance() {
-        distanceThisFrame = worldMoveSpeed * Time.deltaTime;
+        distanceThisFrame = WorldMoveSpeed * Time.deltaTime;
         distance += distanceThisFrame;
         GameEvents.OnPlayerDistanceTraveled.Invoke(distance, distanceThisFrame);
     }

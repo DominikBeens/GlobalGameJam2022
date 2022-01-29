@@ -6,6 +6,12 @@ using System.Linq;
 
 public class Player : MonoBehaviour {
 
+    [SerializeField] private GameObject visualLight;
+    [SerializeField] private GameObject visualDark;
+    [Space]
+    [SerializeField] private Animator animatorLight;
+    [SerializeField] private Animator animatorDark;
+    [Space]
     [SerializeField] private List<Attack1> attack1 = new();
     [SerializeField] private float attack1Cooldown = 1f;
     [Space]
@@ -18,20 +24,20 @@ public class Player : MonoBehaviour {
         public PlayerProjectile ProjectilePrefab;
     }
 
-    private VisualType visualType;
     private float attack1Timer;
-    private float velocity;
 
     private void Awake() {
-        GameEvents.OnPlayerDistanceTraveled.AddListener(HandlePlayerDistanceTraveled);
+        GameEvents.OnVisualTypeChanged.AddListener(HandleVisualTypeChanged);
+        HandleVisualTypeChanged(WorldTypeManager.Instance.VisualType);
     }
 
     private void OnDestroy() {
-        GameEvents.OnPlayerDistanceTraveled.RemoveListener(HandlePlayerDistanceTraveled);
+        GameEvents.OnVisualTypeChanged.RemoveListener(HandleVisualTypeChanged);
     }
 
-    private void HandlePlayerDistanceTraveled(float total, float frame) {
-        velocity = frame;
+    private void HandleVisualTypeChanged(VisualType type) {
+        visualLight.SetActive(type == VisualType.Light);
+        visualDark.SetActive(type == VisualType.Dark);
     }
 
     private void Update() {
@@ -56,8 +62,8 @@ public class Player : MonoBehaviour {
         if (!Input.GetMouseButtonDown(0)) { return; }
 
         attack1Timer = attack1Cooldown;
-        Attack1 attack = attack1.FirstOrDefault(x => x.VisualType == visualType);
+        Attack1 attack = attack1.FirstOrDefault(x => x.VisualType == WorldTypeManager.Instance.VisualType);
         PlayerProjectile projectile = Instantiate(attack.ProjectilePrefab, projectileSpawn.position, Quaternion.identity);
-        projectile.Initialize(projectileSpawn.up, velocity);
+        projectile.Initialize(projectileSpawn.up);
     }
 }

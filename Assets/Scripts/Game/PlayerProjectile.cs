@@ -9,8 +9,10 @@ public class PlayerProjectile : MonoBehaviour {
 
     private Rigidbody2D body;
 
-    public void Initialize(Vector3 direction, float velocity) {
+    public void Initialize(Vector3 direction) {
         body = GetComponent<Rigidbody2D>();
-        body.AddForce(direction * velocity * force, ForceMode2D.Impulse);
+
+        Vector2 scaledForce = direction * GameStateMachine.Instance.WorldMoveSpeed * force * Time.deltaTime;
+        body.AddForce(scaledForce, ForceMode2D.Impulse);
     }
 }
