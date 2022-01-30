@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MA_DevilGate
-  m_Shader: {fileID: -6465566751694194690, guid: e047a52bdc277e84884476a261caa5e1,
+  m_Name: SH_Fix
+  m_Shader: {fileID: -6465566751694194690, guid: 6b7842618ed094b45a5e233d15662057,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -20,24 +20,8 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _Distorsion_Normal:
-        m_Texture: {fileID: 2800000, guid: 3bf40ee3412278740a3594e787bedd7f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_1c8cb37f7d0f4a818421c191786dede8_Texture_1:
-        m_Texture: {fileID: 2800000, guid: 23054276ba0ef4440813b872c5f3e16f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_3b586e63514b460b90a6db8b27e168ae_Texture_1:
-        m_Texture: {fileID: 2800000, guid: 23054276ba0ef4440813b872c5f3e16f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_614bd43780754b218193c1e8f1963545_Texture_1:
-        m_Texture: {fileID: 2800000, guid: 23054276ba0ef4440813b872c5f3e16f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_9bc68121afbf4fe7b296bce52c19c0b9_Texture_1:
-        m_Texture: {fileID: 2800000, guid: 23054276ba0ef4440813b872c5f3e16f, type: 3}
+    - _MainTex:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_fa361a4b92be4957b010d37b8d5a7de9_Texture_1:
@@ -58,17 +42,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Intecity: 1.65
+    - _Intecity: 3.19
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Size: 39.7
-    - _Skale: 23.41
-    - _Speed: 5.38
+    - _Size: 14.66
+    - _Skale: 5
+    - _Speed: 1
     - _transparent: 0.2
     m_Colors:
-    - _Color: {r: 0.33962262, g: 0, b: 0, a: 0.427451}
+    - _Color: {r: 1, g: 0.9892916, b: 0.33333337, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &4882403501724672507
+--- !u!114 &7876967914941230702
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
