@@ -224,9 +224,25 @@ MonoBehaviour:
   - VisualType: 0
     ProjectilePrefab: {fileID: 6520550678467899738, guid: 796a9b997e2204540b67fec77cfe98c7,
       type: 3}
+    FireAudio:
+      Clip: {fileID: 8300000, guid: ed86c6c67808ef84c9c16f5a7018865e, type: 3}
+      Volume: 1
+      PitchMin: 1
+      PitchMax: 1.2
+      SpatialMode: 0
+      DistanceMin: 0
+      DistanceMax: 0
   - VisualType: 1
     ProjectilePrefab: {fileID: 6520550678467899738, guid: adc299f25ef03c84f90d41e61e9a1b72,
       type: 3}
+    FireAudio:
+      Clip: {fileID: 8300000, guid: ed86c6c67808ef84c9c16f5a7018865e, type: 3}
+      Volume: 1
+      PitchMin: 0.6
+      PitchMax: 0.8
+      SpatialMode: 0
+      DistanceMin: 0
+      DistanceMax: 0
   attack1Cooldown: 1
   shooter: {fileID: 7325408161694154273}
   projectileSpawn: {fileID: 7325408161740389792}

@@ -46,6 +46,7 @@ public class Game : Singleton<Game> {
 
         yield return null;
         SimpleAudioManager.Initialize();
+        SimpleAudioManager.SetMasterVolume(0.75f);
         yield return null;
 
         yield return SceneLoadManager.Instance.FadeIn();

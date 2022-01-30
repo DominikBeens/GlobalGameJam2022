@@ -306,6 +306,7 @@ MonoBehaviour:
   isAnimated: 1
   pointerDownSize: 0.85
   pointerClickOvershoot: 8
+  pressClip: {fileID: 8300000, guid: 43850ca3855477e4d9cb0acdce960df3, type: 3}
   text: {fileID: 5473586242970254082}
 --- !u!225 &4132115228310341362
 CanvasGroup:

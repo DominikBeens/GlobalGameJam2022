@@ -3,6 +3,7 @@ using UnityEngine;
 using System;
 using System.Linq;
 using DG.Tweening;
+using DB.SimpleFramework.SimpleAudioManager;
 
 public class Player : MonoBehaviour {
 
@@ -26,6 +27,7 @@ public class Player : MonoBehaviour {
     public struct Attack1 {
         public VisualType VisualType;
         public PlayerProjectile ProjectilePrefab;
+        public SimpleAudioSettings FireAudio;
     }
 
     private float attack1Timer;
@@ -86,6 +88,8 @@ public class Player : MonoBehaviour {
             Attack1 attack = attack1.FirstOrDefault(x => x.VisualType == WorldTypeManager.Instance.VisualType);
             PlayerProjectile projectile = Instantiate(attack.ProjectilePrefab, projectileSpawn.position, Quaternion.identity);
             projectile.Initialize(projectileSpawn.up);
+
+            SimpleAudioManager.Play(attack.FireAudio);
         });
 
         GetAnimator().SetTrigger("Fight");

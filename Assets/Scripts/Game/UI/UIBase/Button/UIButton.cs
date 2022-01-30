@@ -11,6 +11,9 @@ public class UIButton : UIButtonBase {
     [SerializeField] private float pointerDownSize = 0.85f;
     [SerializeField] private float pointerClickOvershoot = 8f;
 
+    [Header("Audio")]
+    [SerializeField] private AudioClip pressClip;
+
     protected CanvasGroup canvasGroup;
 
     protected virtual void Awake() {
@@ -44,6 +47,9 @@ public class UIButton : UIButtonBase {
         base.HandleClick();
         if (isAnimated) {
             container?.DOButtonScaleClick(pointerClickOvershoot);
+        }
+        if (pressClip != null) {
+            DB.SimpleFramework.SimpleAudioManager.SimpleAudioManager.Play2D(pressClip, pitch: Random.Range(0.9f, 1.1f));
         }
     }
 
