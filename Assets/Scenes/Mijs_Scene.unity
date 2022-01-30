@@ -406,8 +406,8 @@ SpriteShapeRenderer:
   - {fileID: -1511801134, guid: c48555083f765fb4fb4eeb9c0fd9cbf7, type: 3}
   - {fileID: 548526397, guid: c48555083f765fb4fb4eeb9c0fd9cbf7, type: 3}
   m_LocalAABB:
-    m_Center: {x: -8.280609, y: 10.721212, z: 0}
-    m_Extent: {x: 59.102386, y: 39.869595, z: 0}
+    m_Center: {x: -8.276821, y: 10.699709, z: 0}
+    m_Extent: {x: 58.964375, y: 39.891098, z: 0}
 --- !u!1001 &207914222
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1092,8 +1092,8 @@ SpriteShapeRenderer:
   - {fileID: 17904158, guid: f339ee6f89b0ad0429a191da240877dd, type: 3}
   - {fileID: -931757557, guid: f339ee6f89b0ad0429a191da240877dd, type: 3}
   m_LocalAABB:
-    m_Center: {x: -7.721283, y: 0.49454975, z: 0}
-    m_Extent: {x: 28.334385, y: 10.324375, z: 0}
+    m_Center: {x: -7.721283, y: 0.45404434, z: 0}
+    m_Extent: {x: 28.334385, y: 10.36488, z: 0}
 --- !u!114 &1815553216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1701,7 +1701,7 @@ PrefabInstance:
     - target: {fileID: 4248468186294918089, guid: 2f6afba74c682f04786ab4f727475dba,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -24.2
+      value: -24.3
       objectReference: {fileID: 0}
     - target: {fileID: 4248468186294918089, guid: 2f6afba74c682f04786ab4f727475dba,
         type: 3}
