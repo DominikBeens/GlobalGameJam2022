@@ -17,7 +17,12 @@ public class Obstacle : MonoBehaviour {
     }
 
     public void Intialize() {
-        VisualType random = Random.value < 0.5f ? VisualType.Light : VisualType.Dark;
+        VisualType random;
+        if (WorldTypeManager.Instance.VisualType == VisualType.Light) {
+            random = Random.value < 0.8f ? VisualType.Dark : VisualType.Light;
+        } else {
+            random = Random.value < 0.8f ? VisualType.Light : VisualType.Dark;
+        }
         SetVisual(random);
 
         ActiveVisual.GameObject.transform.localScale = Vector3.zero;
