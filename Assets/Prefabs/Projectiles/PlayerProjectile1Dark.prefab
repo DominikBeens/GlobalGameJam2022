@@ -4894,7 +4894,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visual: {fileID: 2396722842948181729}
   visualType: 1
-  force: 6000
+  force: 20
   lifetime: 2.5
 --- !u!58 &405360090244194810
 CircleCollider2D:

@@ -17,7 +17,7 @@ public class PlayerProjectile : MonoBehaviour {
         body = GetComponent<Rigidbody2D>();
         remainingLifetime = lifetime;
 
-        Vector2 scaledForce = direction * force * Time.deltaTime;
+        Vector2 scaledForce = direction * force;
         body.AddForce(scaledForce, ForceMode2D.Impulse);
 
         visual.localScale = Vector3.zero;
