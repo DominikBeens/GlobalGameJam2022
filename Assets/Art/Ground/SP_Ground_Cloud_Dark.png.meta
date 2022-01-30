@@ -125,34 +125,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SP_Ground_Cloud_Dark_1
-      rect:
-        serializedVersion: 2
-        x: 103
-        y: 1464
-        width: 939
-        height: 732
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6d52a18caadb589438cfcc865a9ab845
-      internalID: 17904158
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: SP_Ground_Cloud_Dark_2
       rect:
         serializedVersion: 2
         x: 103
         y: 1464
         width: 939
-        height: 674
+        height: 760
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,7 +155,7 @@ TextureImporter:
         height: 749
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 165}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -191,10 +170,10 @@ TextureImporter:
       name: SP_Ground_Cloud_Dark_4
       rect:
         serializedVersion: 2
-        x: 1076
-        y: 1530
-        width: 896
-        height: 802
+        x: 1097
+        y: 1402
+        width: 875
+        height: 883
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

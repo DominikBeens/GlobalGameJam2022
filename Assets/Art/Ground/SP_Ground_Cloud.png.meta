@@ -150,9 +150,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2065
-        y: 2452
+        y: 2585
         width: 886
-        height: 964
+        height: 821
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,9 +191,9 @@ TextureImporter:
       name: SP_Ground_Cloud_4
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 3478
-        width: 987
+        width: 942
         height: 980
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -212,10 +212,10 @@ TextureImporter:
       name: SP_Ground_Cloud_5
       rect:
         serializedVersion: 2
-        x: 2065
-        y: 3471
-        width: 959
-        height: 987
+        x: 2051
+        y: 3514
+        width: 973
+        height: 944
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -233,10 +233,10 @@ TextureImporter:
       name: SP_Ground_Cloud_6
       rect:
         serializedVersion: 2
-        x: 122
+        x: 98
         y: 1421
-        width: 900
-        height: 803
+        width: 932
+        height: 798
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,9 +255,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1111
-        y: 1505
+        y: 1407
         width: 871
-        height: 839
+        height: 882
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,10 +275,10 @@ TextureImporter:
       name: SP_Ground_Cloud_8
       rect:
         serializedVersion: 2
-        x: 2066
-        y: 1477
-        width: 916
-        height: 762
+        x: 2057
+        y: 1467
+        width: 917
+        height: 804
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
