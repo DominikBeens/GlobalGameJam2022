@@ -53,7 +53,7 @@ public class GameStateMachine : MonoStateMachineSingleton<GameStateMachine> {
 
     public void StopGame() {
         float timeScale = Time.timeScale;
-        DOTween.To(() => timeScale, x => timeScale = x, 0.1f, 2f).SetUpdate(true).OnUpdate(() => {
+        DOTween.To(() => timeScale, x => timeScale = x, 0.25f, 1f).SetDelay(1f).SetUpdate(true).OnUpdate(() => {
             Time.timeScale = timeScale;
         });
 

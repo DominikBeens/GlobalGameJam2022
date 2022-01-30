@@ -37,6 +37,8 @@ public class PlayerCameraManager : Manager<PlayerCameraManager> {
     }
 
     private void Update() {
+        if (GameStateMachine.Exists && !GameStateMachine.Instance.GameStarted) { return; }
+
         Vector3 offset = Camera.ScreenToViewportPoint(Input.mousePosition);
         Vector3 centeredOffset = offset - new Vector3(0.5f, 0.5f, 0f);
         centeredOffset = new Vector3(centeredOffset.x * scale, centeredOffset.y * scale, centeredOffset.z * scale);

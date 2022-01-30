@@ -2,7 +2,7 @@
 public class GameEndState : MonoState {
 
     public override void Enter(params object[] data) {
-        Coroutiner.Delay(2f, () => {
+        Coroutiner.Delay(1.75f, () => {
             UIManager.Instance.GetPanel<GameOverPanel>().Show();
             UIManager.Instance.GetPanel<GameOverPanel>().OnRestartClicked.AddListener(HandleGameOverPanelRestartClicked);
             UIManager.Instance.GetPanel<GameOverPanel>().OnMenuClicked.AddListener(HandleGameOverPanelMenuClicked);
