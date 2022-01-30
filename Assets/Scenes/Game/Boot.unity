@@ -407,7 +407,7 @@ Canvas:
   m_GameObject: {fileID: 491937978}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -417,7 +417,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_TargetDisplay: 0
 --- !u!1 &497480734
 GameObject:
@@ -621,7 +621,7 @@ Transform:
   m_Children:
   - {fileID: 2044273016}
   m_Father: {fileID: 816399808}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &760386582
 MonoBehaviour:
@@ -754,10 +754,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 497480735}
+  - {fileID: 3677639204083809458}
   - {fileID: 854410290}
   - {fileID: 760386581}
   - {fileID: 1718103913}
-  - {fileID: 3677639204083809458}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -791,7 +791,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 816399808}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &854410291
 MonoBehaviour:
@@ -1089,7 +1089,7 @@ Transform:
   - {fileID: 1970152676}
   - {fileID: 117229285}
   m_Father: {fileID: 816399808}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1718103914
 MonoBehaviour:
@@ -1105,7 +1105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCanvas: {fileID: 491937982}
   blockerCanvas: {fileID: 1970152680}
-  popupSortingOrderStart: 10
+  popupSortingOrderStart: 25
 --- !u!1 &1970152675
 GameObject:
   m_ObjectHideFlags: 0
@@ -1210,7 +1210,7 @@ Canvas:
   m_GameObject: {fileID: 1970152675}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1220,7 +1220,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 19
   m_TargetDisplay: 0
 --- !u!114 &1970152681
 MonoBehaviour:
@@ -1300,7 +1300,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 1970152681}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -1450,7 +1450,7 @@ Transform:
   - {fileID: 3677639205407206409}
   - {fileID: 3677639205524749931}
   m_Father: {fileID: 816399808}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3677639205407206406
 GameObject:

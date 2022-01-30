@@ -24,6 +24,9 @@ public class UIManager : Manager<UIManager> {
 
         popupSortIndex = popupSortingOrderStart;
 
+        mainCanvas.worldCamera = PlayerCameraManager.Instance.Camera;
+        blockerCanvas.worldCamera = PlayerCameraManager.Instance.Camera;
+
         panels = mainCanvas.GetComponentsInChildren<UIPanel>(true);
         foreach (UIPanel panel in panels) {
             panel.gameObject.SetActive(true);

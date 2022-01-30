@@ -14,7 +14,9 @@ public class PlayerCameraManager : Manager<PlayerCameraManager> {
 
     private float defaultOrthoSize;
 
-    private void Awake() {
+    public override void Initialize() {
+        base.Initialize();
+
         virtualCamera = GetComponentInChildren<CinemachineVirtualCamera>();
         cameraOffset = GetComponentInChildren<CinemachineCameraOffset>();
         Camera = GetComponentInChildren<Camera>();
@@ -28,7 +30,9 @@ public class PlayerCameraManager : Manager<PlayerCameraManager> {
         Game.OnGameLoadingEnded.AddListener(HandleGameLoadingEnded);
     }
 
-    private void OnDestroy() {
+    public override void Deinitialize() {
+        base.Deinitialize();
+
         GameEvents.OnPlayerSpawned.RemoveListener(HandlePlayerSpawned);
         GameEvents.OnGameStarted.RemoveListener(HandleGameStarted);
         GameEvents.OnGameEnded.AddListener(HandleGameEnded);
