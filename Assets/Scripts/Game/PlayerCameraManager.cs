@@ -24,12 +24,16 @@ public class PlayerCameraManager : Manager<PlayerCameraManager> {
         GameEvents.OnPlayerSpawned.AddListener(HandlePlayerSpawned);
         GameEvents.OnGameStarted.AddListener(HandleGameStarted);
         GameEvents.OnGameEnded.AddListener(HandleGameEnded);
+
+        Game.OnGameLoadingEnded.AddListener(HandleGameLoadingEnded);
     }
 
     private void OnDestroy() {
         GameEvents.OnPlayerSpawned.RemoveListener(HandlePlayerSpawned);
         GameEvents.OnGameStarted.RemoveListener(HandleGameStarted);
         GameEvents.OnGameEnded.AddListener(HandleGameEnded);
+
+        Game.OnGameLoadingEnded.RemoveListener(HandleGameLoadingEnded);
     }
 
     private void Update() {
@@ -52,5 +56,9 @@ public class PlayerCameraManager : Manager<PlayerCameraManager> {
         DOTween.To(() => orthoSize, x => orthoSize = x, defaultOrthoSize * 0.75f, 2f).SetUpdate(true).OnUpdate(() => {
             virtualCamera.m_Lens.OrthographicSize = orthoSize;
         });
+    }
+
+    private void HandleGameLoadingEnded() {
+        virtualCamera.m_Lens.OrthographicSize = defaultOrthoSize;
     }
 }

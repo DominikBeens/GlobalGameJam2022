@@ -2,13 +2,11 @@
 public class GamePlayState : MonoState {
 
     public override void Enter(params object[] data) {
-        Coroutiner.Delay(1f, () => {
-            GameStateMachine.Instance.StartGame();
-            WorldTypeManager.Instance.StartClock();
+        GameStateMachine.Instance.StartGame();
+        WorldTypeManager.Instance.StartClock();
 
-            UIManager.Instance.GetPanel<ScorePanel>().Show();
-            UIManager.Instance.GetPanel<VisualSwitchPanel>().Show();
-        });
+        UIManager.Instance.GetPanel<ScorePanel>().Show();
+        UIManager.Instance.GetPanel<VisualSwitchPanel>().Show();
 
         GameEvents.OnPlayerDied.AddListener(HandlePlayerDied);
     }

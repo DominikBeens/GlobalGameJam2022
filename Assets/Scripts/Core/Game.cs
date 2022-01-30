@@ -7,6 +7,7 @@ public class Game : Singleton<Game> {
     public enum GameScene { Undefined, Menu, Game }
 
     public static GameEvent OnGameLoadingStarted = new GameEvent();
+    public static GameEvent OnGameLoadingEnded = new GameEvent();
 
     public GameScene ActiveGameScene { get; private set; }
 
@@ -77,6 +78,10 @@ public class Game : Singleton<Game> {
         }));
     }
 
+    public void RestartGame() {
+        LoadGame();
+    }
+
     public void QuitGame() {
         if (isQuitting) { return; }
         isQuitting = true;
@@ -85,6 +90,7 @@ public class Game : Singleton<Game> {
 
     private IEnumerator LoadRoutine(string scene, Action onLoadComplete = null) {
         isLoading = true;
+        Time.timeScale = 1f;
 
         yield return SceneLoadManager.Instance.FadeIn(0.2f);
         yield return new WaitForSeconds(0.2f);
@@ -102,6 +108,7 @@ public class Game : Singleton<Game> {
 
         yield return SceneLoadManager.Instance.Load(scene);
         onLoadComplete?.Invoke();
+        OnGameLoadingEnded.Invoke();
         yield return SceneLoadManager.Instance.FadeOut();
 
         isLoading = false;

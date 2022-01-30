@@ -15,7 +15,15 @@ public class WorldTypeManager : Manager<WorldTypeManager> {
         VisualType = VisualType.Light;
     }
 
+    public override void Deinitialize() {
+        base.Deinitialize();
+    }
+
     public void StartClock() {
+        VisualType = VisualType.Light;
+        Timer = 0f;
+        TimerNormalized = 0f;
+
         state = true;
     }
 
