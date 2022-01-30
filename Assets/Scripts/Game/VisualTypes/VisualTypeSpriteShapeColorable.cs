@@ -21,7 +21,7 @@ public class VisualTypeSpriteShapeColorable : MonoBehaviour {
         spriteRenderers = GetComponentsInChildren<SpriteShapeRenderer>();
 
         GameEvents.OnVisualTypeChanged.AddListener(HandleVisualTypeChanged);
-        HandleVisualTypeChanged(WorldTypeManager.Instance.VisualType);
+        ChangeColor(WorldTypeManager.Instance.VisualType, true);
     }
 
     private void OnDestroy() {
@@ -29,12 +29,20 @@ public class VisualTypeSpriteShapeColorable : MonoBehaviour {
     }
 
     private void HandleVisualTypeChanged(VisualType type) {
+        ChangeColor(type);
+    }
+
+    private void ChangeColor(VisualType type, bool instant = false) {
         Colorable colorable = colorables.Find(x => x.VisualType == type);
         foreach (SpriteShapeRenderer spriteRenderer in spriteRenderers) {
-            Color color = spriteRenderer.color;
-            DOTween.To(() => color, x => color = x, colorable.Color, colorChangeDuration).OnUpdate(() => {
-                spriteRenderer.color = color;
-            });
+            if (instant) {
+                spriteRenderer.color = colorable.Color;
+            } else {
+                Color color = spriteRenderer.color;
+                DOTween.To(() => color, x => color = x, colorable.Color, colorChangeDuration).OnUpdate(() => {
+                    spriteRenderer.color = color;
+                });
+            }
         }
     }
 }

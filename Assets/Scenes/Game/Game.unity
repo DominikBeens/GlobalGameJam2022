@@ -731,10 +731,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacles:
   - {fileID: 6009622747701592507, guid: 54ca1b5fa8c794b4381ec5d316045959, type: 3}
-  startSpawnAfterDistance: 75
-  interval: 50
+  startSpawnAfterDistance: 15
+  interval: 15
   xSpawnStart: 35
-  xSpawnOffset: 5
+  xSpawnOffset: 4
 --- !u!1 &1879949891
 GameObject:
   m_ObjectHideFlags: 0

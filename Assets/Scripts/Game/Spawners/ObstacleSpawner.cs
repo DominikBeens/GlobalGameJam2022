@@ -48,7 +48,7 @@ public class ObstacleSpawner : MonoBehaviour {
         if (position == Vector3.zero) { return; }
 
         Obstacle obstacle = Instantiate(GetNewObstacle(), position, Quaternion.identity);
-        obstacle.transform.SetParent(groundChunk);
+        obstacle.transform.SetParent(groundChunk.parent);
         obstacle.Intialize();
     }
 
@@ -57,8 +57,14 @@ public class ObstacleSpawner : MonoBehaviour {
 
         RaycastHit2D hit = Physics2D.Raycast(rayStart, Vector3.down, 100f, groundLayerMask);
         if (hit.collider != null) {
-            groundChunk = hit.transform;
-            return hit.point;
+            RaycastHit2D hitLeft = Physics2D.Raycast(hit.point + Vector2.up * 2 + Vector2.left * 1.75f, Vector3.down, 10f, groundLayerMask);
+            if (hitLeft.collider != null) {
+                RaycastHit2D hitRight = Physics2D.Raycast(hit.point + Vector2.up * 2 + Vector2.right * 1.75f, Vector3.down, 10f, groundLayerMask);
+                if (hitRight.collider != null) {
+                    groundChunk = hit.transform;
+                    return hit.point;
+                }
+            }
         }
 
         groundChunk = null;
