@@ -1,30 +1,35 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class MenuStateMachine : MonoStateMachineSingleton<MenuStateMachine> {
 
     [Space]
-    [SerializeField] private Button playButton;
-    [SerializeField] private Button quitButton;
+    [SerializeField] private UIButton playButton;
+    [SerializeField] private UIButton quitButton;
 
     public override void Enter(params object[] data) {
         base.Enter(data);
-        playButton.onClick.AddListener(HandlePlayButtonClicked);
-        quitButton.onClick.AddListener(HandleQuitButtonClicked);
-        HandlePlayButtonClicked();
+        playButton.AddListener(HandlePlayButtonClicked);
+        quitButton.AddListener(HandleQuitButtonClicked);
     }
 
     public override void Exit() {
         base.Exit();
-        playButton.onClick.RemoveListener(HandlePlayButtonClicked);
-        quitButton.onClick.RemoveListener(HandleQuitButtonClicked);
+        playButton.RemoveListener(HandlePlayButtonClicked);
+        quitButton.RemoveListener(HandleQuitButtonClicked);
     }
 
     private void HandlePlayButtonClicked() {
         Game.Instance.LoadGame();
+        ToggleInteractions(false);
     }
 
     private void HandleQuitButtonClicked() {
         Game.Instance.QuitGame();
+        ToggleInteractions(false);
+    }
+
+    private void ToggleInteractions(bool state) {
+        playButton.ToggleInteraction(state);
+        quitButton.ToggleInteraction(state);
     }
 }

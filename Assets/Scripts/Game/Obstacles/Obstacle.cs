@@ -30,6 +30,13 @@ public class Obstacle : MonoBehaviour {
         Animate();
     }
 
+    private void OnTriggerEnter2D(Collider2D collider) {
+        Player player = collider.GetComponent<Player>();
+        if (player && WorldTypeManager.Instance.VisualType != ActiveVisual.VisualType) {
+            GameEvents.OnPlayerDied.Invoke();
+        }
+    }
+
     private void SetVisual(VisualType visualType) {
         if (ActiveVisual.GameObject) {
             ActiveVisual.GameObject.transform.DOKill(true);

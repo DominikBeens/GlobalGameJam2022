@@ -34,13 +34,11 @@ public class GroundSpawner : MonoBehaviour {
         GameEvents.OnPlayerDistanceTraveled.RemoveListener(HandlePlayerDistanceTraveled);
     }
 
-    private void Update() {
-        ProcessGround();
-    }
-
     private void HandlePlayerDistanceTraveled(float total, float frame) {
         distance += frame;
         distanceThisFrame = frame;
+
+        ProcessGround();
     }
 
     private void StartSpawning() {
@@ -50,7 +48,7 @@ public class GroundSpawner : MonoBehaviour {
     }
 
     private void ProcessGround() {
-        if (distance > groundChunkWidth * 2) {
+        if (distance > groundChunkWidth) {
             distance = 0f;
             SpawnGroundChunk();
         }

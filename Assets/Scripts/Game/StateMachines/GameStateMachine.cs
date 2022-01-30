@@ -1,4 +1,5 @@
 using UnityEngine;
+using DG.Tweening;
 
 public class GameStateMachine : MonoStateMachineSingleton<GameStateMachine> {
 
@@ -12,8 +13,9 @@ public class GameStateMachine : MonoStateMachineSingleton<GameStateMachine> {
     [SerializeField] private ObstacleSpawner obstacleSpawner;
     [SerializeField] private GameBackgroundSpawner gameBackgroundSpawner;
 
-    public float WorldMoveSpeed { get; private set; }
+    public bool GameStarted { get; private set; }
 
+    private float worldMoveSpeed;
     private float worldSpeedIncreaseInterval;
 
     private float distance;
@@ -22,50 +24,58 @@ public class GameStateMachine : MonoStateMachineSingleton<GameStateMachine> {
 
     protected override void Awake() {
         base.Awake();
-        PlayerManager.Instance.SpawnPlayer();
         gameBackgroundSpawner.Spawn();
     }
 
     public override void Enter(params object[] data) {
         base.Enter(data);
-
-        WorldMoveSpeed = baseWorldMoveSpeed;
-        worldSpeedIncreaseInterval = baseSpeedIncreaseInterval;
-
-        WorldTypeManager.Instance.StartClock();
-        UIManager.Instance.GetPanel<ScorePanel>().Show();
-        UIManager.Instance.GetPanel<VisualSwitchPanel>().Show();
-
-        GameEvents.OnGameStarted.Invoke();
-    }
-
-    public override void Exit() {
-        base.Exit();
-        WorldTypeManager.Instance.StopClock();
-        UIManager.Instance.GetPanel<ScorePanel>().Hide();
-        UIManager.Instance.GetPanel<VisualSwitchPanel>().Hide();
+        EnterState<GameStartState>();
     }
 
     public override void Tick() {
         base.Tick();
+        if (!GameStarted) { return; }
+
         ProcessSpeed();
         ProcessDistance();
         ProcessGameBackgroundPosition();
     }
 
+    public void StartGame() {
+        worldMoveSpeed = baseWorldMoveSpeed;
+        worldSpeedIncreaseInterval = baseSpeedIncreaseInterval;
+
+        Time.timeScale = 1f;
+
+        GameEvents.OnGameStarted.Invoke();
+        GameStarted = true;
+    }
+
+    public void StopGame() {
+        float timeScale = Time.timeScale;
+        DOTween.To(() => timeScale, x => timeScale = x, 0.1f, 2f).SetUpdate(true).OnUpdate(() => {
+            Time.timeScale = timeScale;
+        });
+
+        EnterState<GameEndState>();
+
+        GameEvents.OnGameEnded.Invoke();
+        GameStarted = false;
+    }
+
     private void ProcessSpeed() {
-        if (WorldMoveSpeed >= maxWorldSpeed) { return; }
+        if (worldMoveSpeed >= maxWorldSpeed) { return; }
 
         distanceForSpeedIncrease += distanceThisFrame;
         if (distanceForSpeedIncrease < worldSpeedIncreaseInterval) { return; }
 
         distanceForSpeedIncrease = 0f;
-        WorldMoveSpeed += speedIncrease;
+        worldMoveSpeed += speedIncrease;
         worldSpeedIncreaseInterval += (baseSpeedIncreaseInterval * 2f);
     }
 
     private void ProcessDistance() {
-        distanceThisFrame = WorldMoveSpeed * Time.deltaTime;
+        distanceThisFrame = worldMoveSpeed * Time.deltaTime;
         distance += distanceThisFrame;
         GameEvents.OnPlayerDistanceTraveled.Invoke(distance, distanceThisFrame);
     }

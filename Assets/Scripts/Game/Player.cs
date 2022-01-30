@@ -45,6 +45,7 @@ public class Player : MonoBehaviour {
     }
 
     private void Update() {
+        if (!GameStateMachine.Instance.GameStarted) { return; }
         ProcessAiming();
         ProcessOrientation();
         ProcessAttack1();

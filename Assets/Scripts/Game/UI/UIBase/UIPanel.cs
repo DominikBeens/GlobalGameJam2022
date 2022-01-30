@@ -7,6 +7,7 @@ public class UIPanel : MonoBehaviour {
     public static GameEvent<UIPanel> OnUIPanelHide = new GameEvent<UIPanel>();
 
     public bool IsOpen { get; private set; }
+    public Canvas Canvas { get; private set; }
 
     public float Height => (panel as RectTransform).rect.height;
 
@@ -16,21 +17,20 @@ public class UIPanel : MonoBehaviour {
 
     [SerializeField] protected Transform panel;
 
-    private Canvas canvas;
     private int defaultSortingOrder;
     private Coroutine showDelayedRoutine;
 
     protected CanvasGroup canvasGroup;
 
     public virtual void Initialize() {
-        canvas = GetComponentInChildren<Canvas>();
-        if (!canvas) {
+        Canvas = GetComponentInChildren<Canvas>();
+        if (!Canvas) {
             Debug.LogError($"No canvas found on {GetType()}!");
             return;
         }
 
-        canvasGroup = canvas.GetComponent<CanvasGroup>();
-        defaultSortingOrder = canvas.sortingOrder;
+        canvasGroup = Canvas.GetComponent<CanvasGroup>();
+        defaultSortingOrder = Canvas.sortingOrder;
         Hide();
     }
 
@@ -42,7 +42,7 @@ public class UIPanel : MonoBehaviour {
     public virtual void LateTick() { }
 
     public virtual void Show() {
-        canvas.enabled = true;
+        Canvas.enabled = true;
         ToggleInteraction(true);
         IsOpen = true;
         OnUIPanelShow.Invoke(this);
@@ -50,7 +50,7 @@ public class UIPanel : MonoBehaviour {
     }
 
     public virtual void Hide() {
-        canvas.enabled = false;
+        Canvas.enabled = false;
         ToggleInteraction(false);
         IsOpen = false;
         OnUIPanelHide.Invoke(this);
@@ -66,7 +66,7 @@ public class UIPanel : MonoBehaviour {
     }
 
     public void SetSortingOrder(int order) {
-        canvas.sortingOrder = order;
+        Canvas.sortingOrder = order;
     }
 
     public void ResetSortingOrder() {

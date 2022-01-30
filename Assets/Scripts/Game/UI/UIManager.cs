@@ -6,6 +6,7 @@ using UnityEngine;
 public class UIManager : Manager<UIManager> {
 
     [SerializeField] private Canvas mainCanvas;
+    [SerializeField] private Canvas blockerCanvas;
     [SerializeField] private int popupSortingOrderStart = 10;
 
     private UIPanel[] panels;
@@ -18,6 +19,8 @@ public class UIManager : Manager<UIManager> {
 
     public override void Initialize() {
         base.Initialize();
+
+        SetupBlockerCanvas();
 
         popupSortIndex = popupSortingOrderStart;
 
@@ -71,11 +74,20 @@ public class UIManager : Manager<UIManager> {
         panel.HideThroughBackButton();
     }
 
+    private void SetupBlockerCanvas() {
+        blockerCanvas.gameObject.SetActive(true);
+        blockerCanvas.enabled = false;
+
+        blockerCanvasButton = blockerCanvas.GetComponent<Button>();
+        blockerCanvasButton.onClick.AddListener(OnBlockerCanvasClicked);
+    }
+
     private void OnUIPanelShowHandler(UIPanel panel) {
         if (panel.IsBackButtonClosable) {
             activePopups.Add(panel);
             panel.SetSortingOrder(popupSortIndex++);
         }
+        UpdateBlocker();
     }
 
     private void OnUIPanelHideHandler(UIPanel panel) {
@@ -86,6 +98,7 @@ public class UIManager : Manager<UIManager> {
         if (!HasActivePopups) {
             popupSortIndex = popupSortingOrderStart;
         }
+        UpdateBlocker();
     }
 
     private void OnBlockerCanvasClicked() {
@@ -103,6 +116,18 @@ public class UIManager : Manager<UIManager> {
         foreach (UIPanel panel in panels) {
             if (!panel.IsOpen) { continue; }
             panel.Hide();
+        }
+    }
+
+    private void UpdateBlocker() {
+        blockerCanvas.enabled = false;
+        for (int i = activePopups.Count - 1; i >= 0; i--) {
+            UIPanel panel = activePopups[i];
+            if (!panel.UsesBackgroundBlocker) { continue; }
+
+            blockerCanvas.sortingOrder = panel.Canvas.sortingOrder - 1;
+            blockerCanvas.enabled = true;
+            break;
         }
     }
 

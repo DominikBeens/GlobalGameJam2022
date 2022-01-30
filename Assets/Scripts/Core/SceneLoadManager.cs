@@ -81,7 +81,7 @@ public class SceneLoadManager : Manager<SceneLoadManager> {
         if (delay > 0f) {
             yield return new WaitForSeconds(delay);
         }
-        yield return canvasGroup.DOFade(value, 0.1f).WaitForCompletion();
+        yield return canvasGroup.DOFade(value, 0.2f).WaitForCompletion();
 
         if (value == 0f) {
             canvasGroup.interactable = false;

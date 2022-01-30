@@ -1,5 +1,6 @@
 using UnityEngine;
 using Cinemachine;
+using DG.Tweening;
 
 public class PlayerCameraManager : Manager<PlayerCameraManager> {
 
@@ -11,16 +12,24 @@ public class PlayerCameraManager : Manager<PlayerCameraManager> {
 
     public Camera Camera { get; private set; }
 
+    private float defaultOrthoSize;
+
     private void Awake() {
         virtualCamera = GetComponentInChildren<CinemachineVirtualCamera>();
         cameraOffset = GetComponentInChildren<CinemachineCameraOffset>();
         Camera = GetComponentInChildren<Camera>();
 
+        defaultOrthoSize = virtualCamera.m_Lens.OrthographicSize;
+
         GameEvents.OnPlayerSpawned.AddListener(HandlePlayerSpawned);
+        GameEvents.OnGameStarted.AddListener(HandleGameStarted);
+        GameEvents.OnGameEnded.AddListener(HandleGameEnded);
     }
 
     private void OnDestroy() {
         GameEvents.OnPlayerSpawned.RemoveListener(HandlePlayerSpawned);
+        GameEvents.OnGameStarted.RemoveListener(HandleGameStarted);
+        GameEvents.OnGameEnded.AddListener(HandleGameEnded);
     }
 
     private void Update() {
@@ -32,5 +41,16 @@ public class PlayerCameraManager : Manager<PlayerCameraManager> {
 
     private void HandlePlayerSpawned() {
         virtualCamera.Follow = PlayerManager.Instance.Player.transform;
+    }
+
+    private void HandleGameStarted() {
+        virtualCamera.m_Lens.OrthographicSize = defaultOrthoSize;
+    }
+
+    private void HandleGameEnded() {
+        float orthoSize = virtualCamera.m_Lens.OrthographicSize;
+        DOTween.To(() => orthoSize, x => orthoSize = x, defaultOrthoSize * 0.75f, 2f).SetUpdate(true).OnUpdate(() => {
+            virtualCamera.m_Lens.OrthographicSize = orthoSize;
+        });
     }
 }
