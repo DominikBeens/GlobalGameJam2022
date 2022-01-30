@@ -5,6 +5,7 @@ public class PlayerProjectile : MonoBehaviour {
 
     [SerializeField] private Transform visual;
     [SerializeField] private VisualType visualType;
+    [SerializeField] private ParticleSystem hitParticle;
     [Space]
     [SerializeField] private float force = 5f;
     [SerializeField] private float lifetime = 5f;
@@ -39,8 +40,15 @@ public class PlayerProjectile : MonoBehaviour {
 
     private void Destroy() {
         isDestroying = true;
+
+        body.isKinematic = true;
+        body.velocity = Vector2.zero;
+        body.angularVelocity = 0f;
+
         visual.DOKill();
-        visual.DOScale(0f, 0.2f).OnComplete(() => Destroy(gameObject));
+        visual.DOScale(0f, 0.2f).OnComplete(() => {
+            Destroy(gameObject, 2f);
+        });
     }
 
     private void OnTriggerEnter2D(Collider2D collider) {
@@ -49,6 +57,7 @@ public class PlayerProjectile : MonoBehaviour {
         Obstacle obstacle = collider.GetComponent<Obstacle>();
         if (obstacle) {
             obstacle.Hit(visualType);
+            hitParticle.Play();
             Destroy();
         }
     }

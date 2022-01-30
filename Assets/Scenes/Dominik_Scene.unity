@@ -292,7 +292,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -465,7 +465,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -519,6 +519,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1315476030
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2396722843959770848, guid: 796a9b997e2204540b67fec77cfe98c7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2396722843959770848, guid: 796a9b997e2204540b67fec77cfe98c7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 36.367
+      objectReference: {fileID: 0}
+    - target: {fileID: 2396722843959770848, guid: 796a9b997e2204540b67fec77cfe98c7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 2396722843959770848, guid: 796a9b997e2204540b67fec77cfe98c7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2396722843959770848, guid: 796a9b997e2204540b67fec77cfe98c7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2396722843959770848, guid: 796a9b997e2204540b67fec77cfe98c7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2396722843959770848, guid: 796a9b997e2204540b67fec77cfe98c7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2396722843959770848, guid: 796a9b997e2204540b67fec77cfe98c7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2396722843959770848, guid: 796a9b997e2204540b67fec77cfe98c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2396722843959770848, guid: 796a9b997e2204540b67fec77cfe98c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2396722843959770848, guid: 796a9b997e2204540b67fec77cfe98c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2396722843959770851, guid: 796a9b997e2204540b67fec77cfe98c7,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerProjectile1Light
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 796a9b997e2204540b67fec77cfe98c7, type: 3}
 --- !u!1001 &8388689822381319103
 PrefabInstance:
   m_ObjectHideFlags: 0
