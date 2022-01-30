@@ -14,11 +14,11 @@ public class GameStateMachine : MonoStateMachineSingleton<GameStateMachine> {
     [SerializeField] private GameBackgroundSpawner gameBackgroundSpawner;
 
     public bool GameStarted { get; private set; }
+    public float Distance { get; private set; }
 
     private float worldMoveSpeed;
     private float worldSpeedIncreaseInterval;
 
-    private float distance;
     private float distanceThisFrame;
     private float distanceForSpeedIncrease;
 
@@ -76,8 +76,8 @@ public class GameStateMachine : MonoStateMachineSingleton<GameStateMachine> {
 
     private void ProcessDistance() {
         distanceThisFrame = worldMoveSpeed * Time.deltaTime;
-        distance += distanceThisFrame;
-        GameEvents.OnPlayerDistanceTraveled.Invoke(distance, distanceThisFrame);
+        Distance += distanceThisFrame;
+        GameEvents.OnPlayerDistanceTraveled.Invoke(Distance, distanceThisFrame);
     }
 
     // Background spawns in viewport but level can go up or down randomly resulting in the player potentially being able to 

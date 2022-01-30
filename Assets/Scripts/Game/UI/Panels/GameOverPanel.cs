@@ -1,4 +1,5 @@
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 
 public class GameOverPanel : UIPanel {
@@ -9,6 +10,7 @@ public class GameOverPanel : UIPanel {
     public override bool IsBackButtonClosable => true;
     public override bool UsesBackgroundBlocker => true;
 
+    [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private UIButton restartButton;
     [SerializeField] private UIButton menuButton;
 
@@ -22,6 +24,8 @@ public class GameOverPanel : UIPanel {
         canvasGroup.DOKill(true);
         canvasGroup.alpha = 0f;
         canvasGroup.DOFade(1f, 0.1f).SetUpdate(true);
+
+        scoreText.text = $"Score: {GameStateMachine.Instance.Distance:F0}";
 
         restartButton.AddListener(OnRestartButtonClicked);
         menuButton.AddListener(OnMenuButtonClicked);
