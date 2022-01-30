@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using System;
+using DB.SimpleFramework.SimpleAudioManager;
 
 public class Game : Singleton<Game> {
 
@@ -44,6 +45,9 @@ public class Game : Singleton<Game> {
         }
 
         yield return null;
+        SimpleAudioManager.Initialize();
+        yield return null;
+
         yield return SceneLoadManager.Instance.FadeIn();
         yield return SceneLoadManager.Instance.Load(GameScene.Menu.ToString());
 
