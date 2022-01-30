@@ -13,17 +13,15 @@ public class WorldTypeManager : Manager<WorldTypeManager> {
     public override void Initialize() {
         base.Initialize();
         VisualType = VisualType.Light;
+        Game.OnGameLoadingStarted.AddListener(HandleLoadingStarted);
     }
 
     public override void Deinitialize() {
         base.Deinitialize();
+        Game.OnGameLoadingStarted.RemoveListener(HandleLoadingStarted);
     }
 
     public void StartClock() {
-        VisualType = VisualType.Light;
-        Timer = 0f;
-        TimerNormalized = 0f;
-
         state = true;
     }
 
@@ -48,5 +46,11 @@ public class WorldTypeManager : Manager<WorldTypeManager> {
         }
 
         GameEvents.OnVisualTypeChanged.Invoke(VisualType);
+    }
+
+    private void HandleLoadingStarted() {
+        VisualType = VisualType.Light;
+        Timer = 0f;
+        TimerNormalized = 0f;
     }
 }

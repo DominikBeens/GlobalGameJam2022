@@ -22,10 +22,13 @@ public class VisualTypeGraphicColorable : MonoBehaviour {
 
         GameEvents.OnVisualTypeChanged.AddListener(HandleVisualTypeChanged);
         HandleVisualTypeChanged(WorldTypeManager.Instance.VisualType);
+
+        Game.OnGameLoadingEnded.AddListener(HandleLoadingEnded);
     }
 
     private void OnDestroy() {
         GameEvents.OnVisualTypeChanged.RemoveListener(HandleVisualTypeChanged);
+        Game.OnGameLoadingEnded.RemoveListener(HandleLoadingEnded);
     }
 
     private void HandleVisualTypeChanged(VisualType type) {
@@ -33,5 +36,9 @@ public class VisualTypeGraphicColorable : MonoBehaviour {
         foreach (Graphic graphic in graphics) {
             graphic.DOColor(colorable.Color, colorChangeDuration);
         }
+    }
+
+    private void HandleLoadingEnded() {
+        HandleVisualTypeChanged(WorldTypeManager.Instance.VisualType);
     }
 }
