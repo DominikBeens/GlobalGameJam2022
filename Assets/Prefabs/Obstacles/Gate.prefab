@@ -116,6 +116,7 @@ MonoBehaviour:
     GameObject: {fileID: 5548149329784657174}
   - VisualType: 1
     GameObject: {fileID: 3186945339870287461}
+  hitClip: {fileID: 8300000, guid: 891307ede51fd2544b00a29beb616699, type: 3}
 --- !u!61 &6364646677613444150
 BoxCollider2D:
   m_ObjectHideFlags: 0

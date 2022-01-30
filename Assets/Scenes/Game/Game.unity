@@ -206,7 +206,7 @@ MonoBehaviour:
   baseWorldMoveSpeed: 5
   maxWorldSpeed: 100
   speedIncrease: 1
-  baseSpeedIncreaseInterval: 25
+  baseSpeedIncreaseInterval: 12.5
   groundSpawner: {fileID: 459141897}
   obstacleSpawner: {fileID: 1223142432}
   gameBackgroundSpawner: {fileID: 746348358}
@@ -390,13 +390,13 @@ MonoBehaviour:
   groundContainer: {fileID: 459141896}
   groundChunks:
   - Type: 0
-    Prefab: {fileID: 1080246610964538119, guid: ba94745626abb8e438d8e4fa580bbe43,
+    Prefab: {fileID: -9055625490838540406, guid: ba94745626abb8e438d8e4fa580bbe43,
       type: 3}
   - Type: 1
-    Prefab: {fileID: 1080246610964538119, guid: 8ef6090ab32a9ba4e964b8431f68e744,
+    Prefab: {fileID: 1401655489968988269, guid: 8ef6090ab32a9ba4e964b8431f68e744,
       type: 3}
   - Type: 2
-    Prefab: {fileID: 1080246610964538119, guid: 96c3501efc2d0f74a95bd934a5ce6754,
+    Prefab: {fileID: 9096828990993906020, guid: 96c3501efc2d0f74a95bd934a5ce6754,
       type: 3}
   groundChunkWidth: 20
   groundChunkHeight: 2.5
@@ -822,7 +822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacles:
   - {fileID: 6009622747701592507, guid: 54ca1b5fa8c794b4381ec5d316045959, type: 3}
-  startSpawnAfterDistance: 15
+  startSpawnAfterDistance: 10
   interval: 15
   xSpawnStart: 35
   xSpawnOffset: 4

@@ -11,7 +11,7 @@ public class GroundSpawner : MonoBehaviour {
     [SerializeField] private float groundChunkWidth = 20f;
     [SerializeField] private float groundChunkHeight = 5f;
 
-    private List<Tuple<GroundChunk, GameObject>> groundChunkHistory = new();
+    private List<Tuple<GroundChunk, Ground>> groundChunkHistory = new();
     private float currentGroundY;
 
     private float distance;
@@ -22,7 +22,7 @@ public class GroundSpawner : MonoBehaviour {
         public enum GroundChunkType { Flat, Up, Down }
 
         public GroundChunkType Type;
-        public GameObject Prefab;
+        public Ground Prefab;
     }
 
     private void Awake() {
@@ -42,7 +42,7 @@ public class GroundSpawner : MonoBehaviour {
     }
 
     private void StartSpawning() {
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 4; i++) {
             SpawnGroundChunk(GroundChunk.GroundChunkType.Flat);
         }
     }
@@ -54,19 +54,19 @@ public class GroundSpawner : MonoBehaviour {
         }
 
         for (int i = groundChunkHistory.Count - 1; i >= 0; i--) {
-            GameObject obj = groundChunkHistory[i].Item2;
-            obj.transform.localPosition += Vector3.left * distanceThisFrame;
+            Ground ground = groundChunkHistory[i].Item2;
+            ground.transform.localPosition += Vector3.left * distanceThisFrame;
 
-            if (obj.transform.localPosition.x < -(groundChunkWidth * 3f)) {
+            if (ground.transform.localPosition.x < -(groundChunkWidth * 3f)) {
                 groundChunkHistory.RemoveAt(i);
-                Destroy(obj);
+                Destroy(ground);
             }
         }
     }
 
     private void SpawnGroundChunk(GroundChunk.GroundChunkType? forcedType = null) {
         GroundChunk chunk = GetNewGroundChunk(forcedType);
-        GameObject chunkObject = Instantiate(chunk.Prefab, groundContainer);
+        Ground ground = Instantiate(chunk.Prefab, groundContainer);
 
         Vector3 position = Vector3.zero;
         if (groundChunkHistory.Count > 0) {
@@ -77,8 +77,8 @@ public class GroundSpawner : MonoBehaviour {
         currentGroundY += chunk.Type == GroundChunk.GroundChunkType.Up ? groundChunkHeight :
                           chunk.Type == GroundChunk.GroundChunkType.Down ? -groundChunkHeight : 0;
 
-        chunkObject.transform.localPosition = position;
-        groundChunkHistory.Add(new(chunk, chunkObject));
+        ground.transform.localPosition = position;
+        groundChunkHistory.Add(new(chunk, ground));
     }
 
     private GroundChunk GetNewGroundChunk(GroundChunk.GroundChunkType? forcedType = null) {

@@ -9,6 +9,7 @@ public class Obstacle : MonoBehaviour {
     public Visual ActiveVisual { get; private set; }
 
     [SerializeField] private List<Visual> visuals = new();
+    [SerializeField] private AudioClip hitClip;
 
     [Serializable]
     public struct Visual {
@@ -33,6 +34,7 @@ public class Obstacle : MonoBehaviour {
         if (visualType == ActiveVisual.VisualType) { return; }
         SetVisual(visualType);
         Animate();
+        DB.SimpleFramework.SimpleAudioManager.SimpleAudioManager.Play2D(hitClip, pitch: Random.Range(0.9f, 1.1f));
     }
 
     private void OnTriggerEnter2D(Collider2D collider) {

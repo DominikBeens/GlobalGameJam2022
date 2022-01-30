@@ -9,6 +9,7 @@ public class VisualTypeColorable : MonoBehaviour {
     [SerializeField] private List<Colorable> colorables = new();
 
     private SpriteRenderer[] spriteRenderers;
+    private Colorable colorable;
 
     [Serializable]
     public struct Colorable {
@@ -32,7 +33,7 @@ public class VisualTypeColorable : MonoBehaviour {
     }
 
     private void ChangeColor(VisualType type, bool instant = false) {
-        Colorable colorable = colorables.Find(x => x.VisualType == type);
+        colorable = colorables.Find(x => x.VisualType == type);
         foreach (SpriteRenderer spriteRenderer in spriteRenderers) {
             if (instant) {
                 spriteRenderer.color = colorable.Color;
